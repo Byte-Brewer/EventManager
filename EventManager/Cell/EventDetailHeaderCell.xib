@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventDetailHC" rowHeight="82" id="KGk-i7-Jjw" customClass="EventDetailHeaderCell" customModule="EventManager" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="82"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="81.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcr-i7-RSR">
+                        <rect key="frame" x="257.5" y="13" width="93.5" height="56"/>
+                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                        <state key="normal" title="All"/>
+                        <connections>
+                            <action selector="showAll:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="SuP-9u-Z7s"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="People from your contacts" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bw5-BP-hFM">
+                        <rect key="frame" x="32" y="32" width="217.5" height="18"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="pcr-i7-RSR" secondAttribute="bottom" constant="2" id="1b3-Tn-fMG"/>
+                    <constraint firstItem="Bw5-BP-hFM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="16" id="2W2-7g-qyg"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="pcr-i7-RSR" secondAttribute="trailing" constant="8" id="BBe-dv-t6t"/>
+                    <constraint firstItem="Bw5-BP-hFM" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Jhb-Ra-qJK"/>
+                    <constraint firstItem="pcr-i7-RSR" firstAttribute="leading" secondItem="Bw5-BP-hFM" secondAttribute="trailing" constant="8" id="Si7-3x-UgU"/>
+                    <constraint firstItem="pcr-i7-RSR" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="1:4" id="ZAv-k2-ccR"/>
+                    <constraint firstItem="pcr-i7-RSR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="ngD-xm-cq7"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="181.59999999999999" y="171.81409295352324"/>
+        </tableViewCell>
+    </objects>
+</document>

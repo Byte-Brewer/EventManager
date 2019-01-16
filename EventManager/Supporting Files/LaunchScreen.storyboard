@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to the EventManager" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eyG-FZ-QcZ">
+                                <rect key="frame" x="16" y="64" width="343" height="23"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="meet interesting people" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3F-0c-2br">
+                                <rect key="frame" x="68.5" y="311.5" width="238" height="64.5"/>
+                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="make contacts" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G5M-Mz-SfK">
+                                <rect key="frame" x="267" y="426" width="92" height="27.5"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visit event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSO-rm-JnG">
+                                <rect key="frame" x="16" y="241.5" width="80" height="20"/>
+                                <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.88121630750913837" green="1" blue="0.70453451567840486" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="eyG-FZ-QcZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="0By-2T-S7Y"/>
+                            <constraint firstItem="cSO-rm-JnG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="9dk-Gk-ZU0"/>
+                            <constraint firstItem="eyG-FZ-QcZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="44" id="MhV-c3-0t7"/>
+                            <constraint firstItem="O3F-0c-2br" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Qft-am-Xqj"/>
+                            <constraint firstItem="O3F-0c-2br" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="aNp-dD-bHr"/>
+                            <constraint firstItem="O3F-0c-2br" firstAttribute="top" secondItem="cSO-rm-JnG" secondAttribute="bottom" constant="50" id="dtS-NL-bDr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eyG-FZ-QcZ" secondAttribute="trailing" constant="16" id="kq8-eL-dZa"/>
+                            <constraint firstItem="G5M-Mz-SfK" firstAttribute="top" secondItem="O3F-0c-2br" secondAttribute="bottom" constant="50" id="nge-aW-ahy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="G5M-Mz-SfK" secondAttribute="trailing" constant="16" id="xUy-HZ-l3U"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+</document>
