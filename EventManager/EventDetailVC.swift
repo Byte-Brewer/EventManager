@@ -61,6 +61,14 @@ class EventDetailVC: UIViewController {
         self.tabBarController?.tabBar.items![1].badgeValue = nil
     }
     
+    
+    @IBAction func allOfParticipants(_ sender: UIBarButtonItem) {
+        let contactsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ContactsTVC") as! ContactsTVController
+        contactsVC.typeContacts = .all
+        self.navigationController?.pushViewController(contactsVC, animated: true)
+    }
+    
+    
 }
 
 extension EventDetailVC: UITableViewDataSource, UITableViewDelegate {

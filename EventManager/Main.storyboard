@@ -111,16 +111,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8Z7-yr-Ter"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="more" id="Toj-zg-lTb"/>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="PtX-sJ-Mx4"/>
+                    <navigationItem key="navigationItem" id="3uV-c2-aO6"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hz0-KW-dJE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1418.4000000000001" y="1640.3298350824589"/>
+            <point key="canvasLocation" x="-1418" y="1671"/>
         </scene>
         <!--ContactsTV Controller-->
         <scene sceneID="2hc-qx-n4w">
             <objects>
-                <tableViewController id="T0k-LF-CYb" customClass="ContactsTVController" customModule="EventManager" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ContactsTVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="T0k-LF-CYb" customClass="ContactsTVController" customModule="EventManager" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="8OP-1Y-voR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -296,7 +297,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PsX-Bh-xmP"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Detail" id="M3l-2b-63f"/>
+                    <navigationItem key="navigationItem" title="Detail" id="M3l-2b-63f">
+                        <barButtonItem key="rightBarButtonItem" title="All of Participants" id="o9m-kN-g9a">
+                            <connections>
+                                <action selector="allOfParticipants:" destination="M8a-De-pmz" id="Q01-Cw-hR6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="eventDateLbl" destination="nzV-ld-gXt" id="8hL-6f-BIB"/>
                         <outlet property="eventInfoLbl" destination="EyU-VP-uaP" id="rjD-vF-74W"/>
@@ -487,7 +494,7 @@
         <!--My Card-->
         <scene sceneID="Hlr-jc-CmG">
             <objects>
-                <viewController id="tB0-kz-GhQ" customClass="MyCardVC" customModule="EventManager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyCardVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tB0-kz-GhQ" customClass="MyCardVC" customModule="EventManager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6XX-cD-uJx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -514,7 +521,7 @@
                                     <constraint firstItem="6wO-f8-YKS" firstAttribute="leading" secondItem="mJY-sc-CG9" secondAttribute="leading" id="l65-Et-sUO"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bPE-nc-UWo">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bPE-nc-UWo" userLabel="QRView">
                                 <rect key="frame" x="259" y="80" width="100" height="100"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qr-code-sample" translatesAutoresizingMaskIntoConstraints="NO" id="mpW-uO-1ER">
@@ -604,7 +611,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="moX-3Z-bNj">
                                 <rect key="frame" x="16" y="368.5" width="343" height="233"/>
-                                <mutableString key="text">Henry Ford (July 30, 1863 to April 7, 1947) was an American automobile manufacturer who created the Ford Model T car in 1908 and went on to develop the assembly line mode of production, which revolutionized the industry. As a result, Ford sold millions of cars and became a world-famous company head. The company lost its market dominance but had a lasting impact on other technological development and U.S. infrastructure. Today Henry Ford is credited for helping to build America's economy during the nation's vulnerable early years and is considered one of America's leading businessmen.</mutableString>
+                                <string key="text">Henry Ford (July 30, 1863 to April 7, 1947) was an American automobile manufacturer who created the Ford Model T car in 1908 and went on to develop the assembly line mode of production, which revolutionized the industry. As a result, Ford sold millions of cars and became a world-famous company head. The company lost its market dominance but had a lasting impact on other technological development and U.S. infrastructure. Today Henry Ford is credited for helping to build America's economy during the nation's vulnerable early years and is considered one of America's leading businessmen.</string>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -623,21 +630,21 @@
                                         <rect key="frame" x="0.0" y="25.5" width="273" height="24"/>
                                         <state key="normal" title="hengyFord@gmail.com"/>
                                         <connections>
-                                            <action selector="emailAction:" destination="tB0-kz-GhQ" eventType="touchUpInside" id="Yxn-Fk-gDJ"/>
+                                            <action selector="emailAction:" destination="tB0-kz-GhQ" eventType="touchUpInside" id="ssP-1G-VPq"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eq9-sL-yw6">
                                         <rect key="frame" x="0.0" y="50.5" width="273" height="24.5"/>
                                         <state key="normal" title="general.Motors"/>
                                         <connections>
-                                            <action selector="skypeAction:" destination="tB0-kz-GhQ" eventType="touchUpInside" id="FrL-d5-kj8"/>
+                                            <action selector="skypeAction:" destination="tB0-kz-GhQ" eventType="touchUpInside" id="XOU-Ky-Czm"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n58-Tz-tBE">
                                         <rect key="frame" x="0.0" y="76" width="273" height="24"/>
                                         <state key="normal" title="https://twitter.com/ford"/>
                                         <connections>
-                                            <action selector="twitterAction:" destination="tB0-kz-GhQ" eventType="touchUpInside" id="aop-H1-6xi"/>
+                                            <action selector="twitterAction:" destination="tB0-kz-GhQ" eventType="touchUpInside" id="yDU-LY-NOg"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -672,6 +679,15 @@
                     <navigationItem key="navigationItem" title="My Card" id="cD5-0T-nZB">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="TfH-1w-XEy"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="companyLbl" destination="fJl-8S-oHn" id="wsA-eC-AZd"/>
+                        <outlet property="editButton" destination="TfH-1w-XEy" id="V2K-3c-NpH"/>
+                        <outlet property="infoLbl" destination="moX-3Z-bNj" id="sEw-1n-W3P"/>
+                        <outlet property="nameLbl" destination="VpV-fJ-ShX" id="dZR-ZL-Cu6"/>
+                        <outlet property="placeLbl" destination="iEw-TT-RQE" id="IVa-ec-ko9"/>
+                        <outlet property="positionLbl" destination="Hvz-es-QI8" id="2wJ-94-ZtJ"/>
+                        <outlet property="qrView" destination="bPE-nc-UWo" id="xvu-rG-L28"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q4A-2m-BBc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -690,7 +706,7 @@
                         <segue destination="DXv-I1-LgR" kind="relationship" relationship="viewControllers" id="h4H-dW-Xjd"/>
                         <segue destination="9Jd-Yc-dS5" kind="relationship" relationship="viewControllers" id="AL4-Mu-YqU"/>
                         <segue destination="bUU-6R-rvo" kind="relationship" relationship="viewControllers" id="gUj-Uo-eKx"/>
-                        <segue destination="UdJ-ce-vhR" kind="relationship" relationship="viewControllers" id="OIE-Ug-QGi"/>
+                        <segue destination="UdJ-ce-vhR" kind="relationship" relationship="viewControllers" id="TBO-7X-cs7"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ch-iN-MKX" userLabel="First Responder" sceneMemberID="firstResponder"/>

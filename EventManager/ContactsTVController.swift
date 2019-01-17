@@ -8,15 +8,44 @@
 
 import UIKit
 
+enum TypeContacts: Int {
+    case request = 0
+    case all = 1
+}
+
 class ContactsTVController: UITableViewController {
     
+
     let contacts = ContactsModel.shared.arrayOfContacts
+    
+    var typeContacts = TypeContacts.request {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "ContactsCell", bundle: nil), forCellReuseIdentifier: "ContactsCell")
         self.clearsSelectionOnViewWillAppear = true
     }
+    
+  
+    @IBAction func listTorequestAction(_ sender: UISegmentedControl) {
+        typeContacts = TypeContacts.init(rawValue: sender.selectedSegmentIndex)!
+    }
+    
+    
+    
+    @IBAction func addNewContact(_ sender: UIBarButtonItem) {
+    }
+    
+    
+    
+    
+    
     
     // MARK: - Table view data source
     
@@ -27,7 +56,14 @@ class ContactsTVController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ContactsCell", for: indexPath) as! ContactsCell
-        cell.setupCell(contact: contacts![indexPath.row])
+        if typeContacts == .all {
+            cell.setupCell(contact: contacts![indexPath.row])
+        } else {
+            cell.setupCell(contact: contacts![indexPath.row], isInvaitCell: true)
+        }
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = UIColor.cyan
+        cell.selectedBackgroundView = backgroundView
         return cell
     }
     
@@ -36,9 +72,17 @@ class ContactsTVController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let contactsDetailVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ContactsDetailVC") as! ContactsDetailVC
-        contactsDetailVC.contact = contacts![indexPath.row]
-        self.navigationController?.pushViewController(contactsDetailVC, animated: true)
+        
+        let contact = contacts![indexPath.row]
+        
+        if !contact.isActive {
+            let contactsDetailVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MyCardVC") as! MyCardVC
+            contactsDetailVC.contact = contact
+            contactsDetailVC.isMyContact = false
+            self.navigationController?.pushViewController(contactsDetailVC, animated: true)
+        } else {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
     }
     
     
@@ -83,27 +127,43 @@ class ContactsTVController: UITableViewController {
     
     
     /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+     print("TUT trailingSwipeActionsConfigurationForRowAt")
+     let deleteAction = UIContextualAction(style: .destructive, title: "Decline") { (action, view, handler) in
      
+     //            tableView.beginUpdates()
+     self.arrayOfContacts?.remove(at: indexPath.row)
+     tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.fade)
+     tableView.reloadData()
+     //            tableView.endUpdates()
+     print("Delete Action Tapped")
      }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
+     deleteAction.backgroundColor = .red
+     let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+     return configuration
      }
-     */
-    
-    /*
-     // MARK: - Navigation
      
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
+     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+     print("TUT leading trailingSwipeActionsConfigurationForRowAt")
+     
+     let deleteAction = UIContextualAction(style: .destructive, title: "Accept") { (action, view, handler) in
+     print("Add Action Tapped")
+     self.arrayOfContacts?.remove(at: indexPath.row)
+     tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.bottom)
+     tableView.reloadData()
+     }
+     deleteAction.backgroundColor = .green
+     let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+     return configuration
+     }
+     
+     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+     if editingStyle == .delete {
+     // Delete the row from the data source
+     tableView.deleteRows(at: [indexPath], with: .fade)
+     } else if editingStyle == .insert {
+     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+     }
      }
      */
 }

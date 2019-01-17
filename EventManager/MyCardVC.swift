@@ -10,11 +10,47 @@ import UIKit
 import MessageUI
 
 class MyCardVC: UIViewController, MFMailComposeViewControllerDelegate {
-
+    
+    
+    @IBOutlet weak var nameLbl: UILabel!
+    @IBOutlet weak var positionLbl: UILabel!
+    @IBOutlet weak var companyLbl: UILabel!
+    @IBOutlet weak var placeLbl: UILabel!
+    @IBOutlet weak var infoLbl: UILabel!
+    
+    
+    @IBOutlet weak var editButton: UIBarButtonItem!
+    @IBOutlet weak var qrView: UIView!
+    
+    
+    var isMyContact = true
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if !isMyContact {
+//            self.navigationController?.navigationItem.rightBarButtonItem = nil
+            self.navigationItem.rightBarButtonItem?.tintColor = UIColor.clear
+            qrView.isHidden = true
+        }
+        setupView()
     }
     
+    
+    var contact: ContactElement?
+    
+    
+    func setupView() {
+        if let contact = contact {
+            self.navigationItem.title = "Contact"
+            nameLbl.text = contact.name
+            positionLbl.text = contact.position
+            companyLbl.text = contact.company
+//            placeLbl.text = contact.address
+            infoLbl.text = contact.about
+        }
+    }
     
     @IBAction func phoneAction(_ sender: UIButton) {
         
@@ -66,24 +102,28 @@ class MyCardVC: UIViewController, MFMailComposeViewControllerDelegate {
     
     
     @IBAction func skypeAction(_ sender: UIButton) {
-        
-        if UIApplication.shared.canOpenURL(URL(string: "skype")!) {
-            UIApplication.shared.open(URL(string: "skype:echo123?call")!, completionHandler: nil)
+        let Username = sender.titleLabel?.text
+        let appURL = NSURL(string: "skype:echo123?call")! // Yes it is work
+        let webURL = NSURL(string: "https://skype.com/\(Username!)")! // http://itunes.com/apps/skype/skype
+        let application = UIApplication.shared
+        if !application.canOpenURL(appURL as URL) {
+            application.open(appURL as URL)
         } else {
-            UIApplication.shared.open(URL(string: "http://itunes.com/apps/skype/skype")!)
+            // if Instagram app is not installed, open URL inside Safari
+            application.open(webURL as URL)
         }
-//        {
-//            BOOL installed = [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"skype:"]];
-//            if(installed)
-//            {
-//                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"skype:echo123?call"]];
-//            }
-//            else
-//            {
-//                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://itunes.com/apps/skype/skype"]];
-//            }
     }
     
     @IBAction func twitterAction(_ sender: UIButton) {
+        let Username = sender.titleLabel?.text
+        let appURL = NSURL(string: "twitter:///user?screen_name=\(Username!)")!
+        let webURL = NSURL(string: "https://twitter.com/\(Username!)")!
+        let application = UIApplication.shared
+        if application.canOpenURL(appURL as URL) {
+            application.open(appURL as URL)
+        } else {
+            // if Instagram app is not installed, open URL inside Safari
+            application.open(webURL as URL)
+        }
     }
 }

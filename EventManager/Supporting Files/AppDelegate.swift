@@ -20,15 +20,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
-        let maskView = UIImageView(frame: window!.frame)
-        maskView.image = UIImage(named: "log5")
-        maskView.contentMode = .scaleAspectFit
-        maskView.tag = 2020
+//        let maskView = UIImageView(frame: window!.frame)
+//        maskView.image = UIImage(named: "log5")
+//        maskView.contentMode = .scaleAspectFit
+//        maskView.tag = 2020
         let blurEffect = UIBlurEffect(style: .regular)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = window!.frame
         blurEffectView.tag = 2019
-        self.window?.addSubview(maskView)
+//        self.window?.addSubview(maskView)
         self.window?.addSubview(blurEffectView)
         print("Function: \(#function), line: \(#line)")
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -37,6 +37,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidEnterBackground(_ application: UIApplication) {
         print("Function: \(#function), line: \(#line)")
+        self.window?.viewWithTag(2019)?.removeFromSuperview()
+        self.window?.viewWithTag(2020)?.removeFromSuperview()
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
@@ -49,7 +51,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         print("Function: \(#function), line: \(#line)")
-        printLog("Simple error")
         self.window?.viewWithTag(2019)?.removeFromSuperview()
         self.window?.viewWithTag(2020)?.removeFromSuperview()
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
