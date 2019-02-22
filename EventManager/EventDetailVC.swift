@@ -95,7 +95,7 @@ extension EventDetailVC: UITableViewDataSource, UITableViewDelegate {
     
 // old version
     private func showAllParticipants(notification: Notification) {
-        let invaitVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "InvaitContactsTVController") as! InvaitContactsTVController
+        let invaitVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "InviteContactsTVController") as! InviteContactsTVController
         self.navigationController?.pushViewController(invaitVC, animated: true)
     }
 

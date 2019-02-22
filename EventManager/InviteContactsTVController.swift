@@ -8,7 +8,7 @@
 
 import UIKit
 
-class InvaitContactsTVController: UITableViewController {
+class InviteContactsTVController: UITableViewController {
     
     var arrayOfContacts = ContactsModel.shared.arrayOfContacts
     

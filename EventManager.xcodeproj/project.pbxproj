@@ -29,7 +29,7 @@
 		78E265CC21EDD0D600B4FD87 /* ContactsDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E265CB21EDD0D600B4FD87 /* ContactsDetailVC.swift */; };
 		78E265CF21EDDE1400B4FD87 /* EventDetailHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E265CD21EDDE1400B4FD87 /* EventDetailHeaderCell.swift */; };
 		78E265D021EDDE1400B4FD87 /* EventDetailHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78E265CE21EDDE1400B4FD87 /* EventDetailHeaderCell.xib */; };
-		78E265D221EE1CBA00B4FD87 /* InvaitContactsTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E265D121EE1CBA00B4FD87 /* InvaitContactsTVController.swift */; };
+		78E265D221EE1CBA00B4FD87 /* InviteContactsTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E265D121EE1CBA00B4FD87 /* InviteContactsTVController.swift */; };
 		78E265D421EF80A100B4FD87 /* MyCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E265D321EF80A100B4FD87 /* MyCardVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,7 +58,7 @@
 		78E265CB21EDD0D600B4FD87 /* ContactsDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsDetailVC.swift; sourceTree = "<group>"; };
 		78E265CD21EDDE1400B4FD87 /* EventDetailHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailHeaderCell.swift; sourceTree = "<group>"; };
 		78E265CE21EDDE1400B4FD87 /* EventDetailHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventDetailHeaderCell.xib; sourceTree = "<group>"; };
-		78E265D121EE1CBA00B4FD87 /* InvaitContactsTVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvaitContactsTVController.swift; sourceTree = "<group>"; };
+		78E265D121EE1CBA00B4FD87 /* InviteContactsTVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteContactsTVController.swift; sourceTree = "<group>"; };
 		78E265D321EF80A100B4FD87 /* MyCardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,7 +96,7 @@
 				78AF55FF21E782F600C35C77 /* Cell */,
 				78AF55F921E75B3F00C35C77 /* Main.storyboard */,
 				78E265D321EF80A100B4FD87 /* MyCardVC.swift */,
-				78E265D121EE1CBA00B4FD87 /* InvaitContactsTVController.swift */,
+				78E265D121EE1CBA00B4FD87 /* InviteContactsTVController.swift */,
 				78E265C321ECF23900B4FD87 /* EventDetailVC.swift */,
 				78D1949D21E788C5000A8F2E /* EventTVController.swift */,
 				7892F53F21E89818009650AB /* ContactsTVController.swift */,
@@ -233,7 +233,7 @@
 			files = (
 				7892F54821E8C669009650AB /* MenuController.swift in Sources */,
 				78E265CC21EDD0D600B4FD87 /* ContactsDetailVC.swift in Sources */,
-				78E265D221EE1CBA00B4FD87 /* InvaitContactsTVController.swift in Sources */,
+				78E265D221EE1CBA00B4FD87 /* InviteContactsTVController.swift in Sources */,
 				78D1949E21E788C5000A8F2E /* EventTVController.swift in Sources */,
 				78AF560C21E786CE00C35C77 /* EventCell.swift in Sources */,
 				78E265CF21EDDE1400B4FD87 /* EventDetailHeaderCell.swift in Sources */,
