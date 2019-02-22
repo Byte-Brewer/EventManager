@@ -27,3 +27,12 @@ Abstract: We are at a very exciting time in cosmology as we make new proposals f
     private var arrayOfInfo = ["A premier integration conference for CIOs, IT Leader and technologists to address the challenges of the new digital era.", "eCommerce Conferences bring together prominent speakers, inspiring leaders, ecommerce scholars & delegates, across the horizon from various industries to a platform to discuss & share about the transformative, penetrating e-commerce business; insightful journeys and challenges", "Economics conferences provide opportunities for economists, academicians and researchers along-with professionals, policy makers, research scholar and practitioners from various fields in economics to present their research contributions, experience and ideas, on a single forum and interact with members inside and outside their own particular disciplines.", "The human resource conferences provide great opportunity to enhance learning, human potential, and high performance in work related systems and contribute to sustainable human resource development.", "General objective of Management Conferences is to facilitate an open and constructive dialogue between researchers and practitioners based on research works and practical experiences which foster a better understanding of the world’s best management policies practices.", "The fundamental purpose of Marketing Conferences is to discover solutions for streamlining information-exchange processes, improving support capacities, gain an arsenal of new marketing techniques, tips, savvy suggestions, great ideas, little-known secrets, smart how-tos, and best practices to identify market sentiments."]
     private var arrayOfIsHere = [false, false, false, false, false]
 }
+
+struct Event {
+    let name: String
+    let place: String
+    let date: String
+    let info: String
+    let isHere: Bool
+    let friendsCount: Int
+}

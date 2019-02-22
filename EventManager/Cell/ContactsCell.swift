@@ -34,7 +34,7 @@ class ContactsCell: UITableViewCell {
     }
     
     @IBAction func inContactBtnAction(_ sender: UIButton) {
-        print("slhkgasd;a a;ksdja;kdj k;jd ")
+        
     }
     
     func setupCell(contact: ContactElement, isInvaitCell: Bool = false) {

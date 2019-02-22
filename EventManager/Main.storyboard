@@ -141,7 +141,25 @@
                             <outlet property="delegate" destination="T0k-LF-CYb" id="st9-aU-cIl"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Scb-EI-WGM"/>
+                    <navigationItem key="navigationItem" id="Scb-EI-WGM">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="bLB-CM-3jl">
+                            <rect key="frame" x="123" y="7" width="129" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="List"/>
+                                <segment title="Request"/>
+                            </segments>
+                            <connections>
+                                <action selector="listTorequestAction:" destination="T0k-LF-CYb" eventType="valueChanged" id="e7y-ol-N8F"/>
+                            </connections>
+                        </segmentedControl>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Xxo-8f-EMP">
+                            <connections>
+                                <action selector="addNewContact:" destination="T0k-LF-CYb" id="Uhb-pB-LWg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MQa-ap-ZLr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -298,7 +316,7 @@
                         <viewLayoutGuide key="safeArea" id="PsX-Bh-xmP"/>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="M3l-2b-63f">
-                        <barButtonItem key="rightBarButtonItem" title="All of Participants" id="o9m-kN-g9a">
+                        <barButtonItem key="rightBarButtonItem" title="All Participants" id="o9m-kN-g9a">
                             <connections>
                                 <action selector="allOfParticipants:" destination="M8a-De-pmz" id="Q01-Cw-hR6"/>
                             </connections>
@@ -642,7 +660,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n58-Tz-tBE">
                                         <rect key="frame" x="0.0" y="76" width="273" height="24"/>
-                                        <state key="normal" title="https://twitter.com/ford"/>
+                                        <state key="normal" title="https://twitter.com/elonmusk"/>
                                         <connections>
                                             <action selector="twitterAction:" destination="tB0-kz-GhQ" eventType="touchUpInside" id="yDU-LY-NOg"/>
                                         </connections>

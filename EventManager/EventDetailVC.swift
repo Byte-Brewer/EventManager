@@ -35,7 +35,7 @@ class EventDetailVC: UIViewController {
         tableView.dataSource = self
         setupView(event: event!)
         
-        NotificationCenter.default.addObserver(forName: NSNotification.Name("showAllParticipants"), object: nil, queue: nil, using: showAllParticipants)
+        NotificationCenter.default.addObserver(forName: NSNotification.Name("showAllParticipants"), object: nil, queue: nil, using: showAllParticipants)  // old version
         tableView.register(UINib(nibName: "ContactsSmallCell", bundle: nil), forCellReuseIdentifier: "ContactsSmallCell")
         tableView.register(UINib(nibName: "EventDetailHeaderCell", bundle: nil), forCellReuseIdentifier: "EventDetailHC")
         
@@ -61,14 +61,12 @@ class EventDetailVC: UIViewController {
         self.tabBarController?.tabBar.items![1].badgeValue = nil
     }
     
-    
     @IBAction func allOfParticipants(_ sender: UIBarButtonItem) {
         let contactsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ContactsTVC") as! ContactsTVController
         contactsVC.typeContacts = .all
         self.navigationController?.pushViewController(contactsVC, animated: true)
     }
-    
-    
+
 }
 
 extension EventDetailVC: UITableViewDataSource, UITableViewDelegate {
@@ -95,8 +93,8 @@ extension EventDetailVC: UITableViewDataSource, UITableViewDelegate {
         self.navigationController?.pushViewController(contactsDetailVC, animated: true)
     }
     
+// old version
     private func showAllParticipants(notification: Notification) {
-        print("I Recived Notification")
         let invaitVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "InvaitContactsTVController") as! InvaitContactsTVController
         self.navigationController?.pushViewController(invaitVC, animated: true)
     }

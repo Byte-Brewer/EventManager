@@ -19,7 +19,7 @@ class EventDetailHeaderCell: UITableViewCell {
     }
     
     @IBAction func showAll(_ sender: UIButton) {
-        NotificationCenter.default.post(name: NSNotification.Name("showAllParticipants"), object: nil)
+        NotificationCenter.default.post(name: NSNotification.Name("showAllParticipants"), object: nil) // old version
     }
     
 }

@@ -61,13 +61,3 @@ class EventCell: UITableViewCell {
         }
     }
 }
-
-
-struct Event {
-    let name: String
-    let place: String
-    let date: String
-    let info: String
-    let isHere: Bool
-    let friendsCount: Int
-}

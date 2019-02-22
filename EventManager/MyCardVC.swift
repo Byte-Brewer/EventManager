@@ -30,7 +30,6 @@ class MyCardVC: UIViewController, MFMailComposeViewControllerDelegate {
         super.viewDidLoad()
         
         if !isMyContact {
-//            self.navigationController?.navigationItem.rightBarButtonItem = nil
             self.navigationItem.rightBarButtonItem?.tintColor = UIColor.clear
             qrView.isHidden = true
         }
@@ -76,7 +75,7 @@ class MyCardVC: UIViewController, MFMailComposeViewControllerDelegate {
         }
         
         if !MFMailComposeViewController.canSendMail() {
-            Swift.print("Mail services are not available")
+            print("Mail services are not available")
             return
         }
         
@@ -106,10 +105,10 @@ class MyCardVC: UIViewController, MFMailComposeViewControllerDelegate {
         let appURL = NSURL(string: "skype:echo123?call")! // Yes it is work
         let webURL = NSURL(string: "https://skype.com/\(Username!)")! // http://itunes.com/apps/skype/skype
         let application = UIApplication.shared
-        if !application.canOpenURL(appURL as URL) {
+        if application.canOpenURL(appURL as URL) {
             application.open(appURL as URL)
         } else {
-            // if Instagram app is not installed, open URL inside Safari
+            // if skype.com app is not installed, open URL inside Safari
             application.open(webURL as URL)
         }
     }
@@ -117,12 +116,12 @@ class MyCardVC: UIViewController, MFMailComposeViewControllerDelegate {
     @IBAction func twitterAction(_ sender: UIButton) {
         let Username = sender.titleLabel?.text
         let appURL = NSURL(string: "twitter:///user?screen_name=\(Username!)")!
-        let webURL = NSURL(string: "https://twitter.com/\(Username!)")!
+        let webURL = NSURL(string: "https://twitter.com/elonmusk")! //  "https://twitter.com/\(Username!)"
         let application = UIApplication.shared
         if application.canOpenURL(appURL as URL) {
             application.open(appURL as URL)
         } else {
-            // if Instagram app is not installed, open URL inside Safari
+            // if twitter.com app is not installed, open URL inside Safari
             application.open(webURL as URL)
         }
     }
